@@ -25,7 +25,8 @@ RUN set -xe \
     && docker-php-ext-install -j$(nproc) gd ldap \
     && pecl install apcu-4.0.11 xdebug-2.4.1 ZendOpcache-7.0.4 \
     && pecl clear-cache \
-    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $PHP_BUILD_DEPS
+    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $PHP_BUILD_DEPS \
+    && rm -rf /usr/include/freetype2
 
 RUN set -xe \
     && docker-php-source extract \
