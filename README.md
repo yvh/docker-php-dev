@@ -6,8 +6,12 @@ See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-dev/)
 
 - [ `5.6-apache` (*5.6/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/5.6/apache/Dockerfile)
 - [ `5.6-fpm` (*5.6/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/5.6/fpm/Dockerfile)
+- [ `5.5-apache` (*5.5/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/5.5/apache/Dockerfile)
+- [ `5.5-fpm` (*5.5/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/5.5/fpm/Dockerfile)
 - [ `5.4-apache` (*5.4/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/5.4/apache/Dockerfile)
 - [ `5.4-fpm` (*5.4/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/5.4/fpm/Dockerfile)
+- [ `5.3-apache` (*5.3/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/5.3/apache/Dockerfile)
+- [ `5.3-fpm` (*5.3/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/5.3/fpm/Dockerfile)
 
 # How to use this image
 
