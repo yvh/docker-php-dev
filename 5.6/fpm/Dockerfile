@@ -25,7 +25,7 @@ RUN set -xe \
     && docker-php-ext-configure gd --enable-gd-native-ttf --with-jpeg-dir=/usr/lib/x86_64-linux-gnu --with-png-dir=/usr/lib/x86_64-linux-gnu --with-freetype-dir=/usr/lib/x86_64-linux-gnu \
     && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu --with-ldap-sasl \
     && docker-php-ext-install -j$(nproc) gd ldap \
-    && pecl install apcu-4.0.11 xdebug-2.5.1 ZendOpcache-7.0.4 \
+    && pecl install apcu-4.0.11 xdebug-2.5.1 ZendOpcache-7.0.5 \
     && pecl clear-cache \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $PHP_BUILD_DEPS \
     && rm -rf /usr/include/freetype2
