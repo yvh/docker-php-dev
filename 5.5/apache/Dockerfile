@@ -40,6 +40,8 @@ RUN set -xe \
     && sed -i -e "s|upload_max_filesize = 2M|upload_max_filesize = 50M|" php.ini \
     && sed -i -e "s|;date.timezone =|date.timezone = Europe/Brussels|" php.ini \
     && sed -i -e "s|;cgi.fix_pathinfo=1|cgi.fix_pathinfo = 0|" php.ini \
+    && sed -i -e "s|;realpath_cache_size = 16k|realpath_cache_size = 4096K|" php.ini \
+    && sed -i -e "s|;realpath_cache_ttl = 120|realpath_cache_ttl = 600|" php.ini \
     && docker-php-source delete
 
 RUN set -xe \
@@ -56,7 +58,8 @@ RUN set -xe \
     && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name opcache.so)" > opcache.ini \
     && echo "opcache.enable=1" >> opcache.ini \
     && echo "opcache.enable_cli=1" >> opcache.ini \
-    && echo "opcache.revalidate_freq=2" >> opcache.ini
+    && echo "opcache.revalidate_freq=2" >> opcache.ini \
+    && echo "opcache.max_accelerated_files = 20000" >> opcache.ini
 
 RUN set -xe \
     && cd /usr/local/etc/php/conf.d \
