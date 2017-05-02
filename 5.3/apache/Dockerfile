@@ -26,6 +26,7 @@ RUN set -xe \
     && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu --with-ldap-sasl \
     && docker-php-ext-install -j$(nproc) gd ldap \
     && pecl install apc xdebug-2.2.7 \
+    && docker-php-ext-enable apc xdebug \
     && pecl clear-cache \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $PHP_BUILD_DEPS \
     && rm -rf /usr/include/freetype2
@@ -46,19 +47,18 @@ RUN set -xe \
 
 RUN set -xe \
     && cd /usr/local/etc/php/conf.d \
-    && echo "extension=$(find /usr/local/lib/php/extensions/ -name apc.so)" > apc.ini \
-    && echo "apc.enabled=1" >> apc.ini \
-    && echo "apc.shm_segments=1" >> apc.ini \
-    && echo "apc.shm_size=128M" >> apc.ini \
-    && echo "apc.ttl=7200" >> apc.ini \
-    && echo "apc.enable_cli=0" >> apc.ini
+    && echo "apc.enabled=1" >> docker-php-ext-apc.ini \
+    && echo "apc.shm_segments=1" >> docker-php-ext-apc.ini \
+    && echo "apc.shm_size=128M" >> docker-php-ext-apc.ini \
+    && echo "apc.ttl=7200" >> docker-php-ext-apc.ini \
+    && echo "apc.enable_cli=0" >> docker-php-ext-apc.ini
 
 RUN set -xe \
     && cd /usr/local/etc/php/conf.d \
-    && echo ";zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > xdebug.ini \
-    && echo "xdebug.default_enable=1" >> xdebug.ini \
-    && echo "xdebug.profiler_enable=0" >> xdebug.ini \
-    && echo "xdebug.idekey=PHPSTORM" >> xdebug.ini \
-    && echo "xdebug.max_nesting_level=200" >> xdebug.ini \
-    && echo "xdebug.remote_enable=1" >> xdebug.ini \
-    && echo "xdebug.remote_autostart=0" >> xdebug.ini
+    && sed -i -e "s|zend_extension|;zend_extension|" docker-php-ext-xdebug.ini \
+    && echo "xdebug.default_enable=1" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.profiler_enable=0" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.idekey=PHPSTORM" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.max_nesting_level=200" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.remote_enable=1" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.remote_autostart=0" >> docker-php-ext-xdebug.ini
