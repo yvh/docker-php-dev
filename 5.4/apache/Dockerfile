@@ -26,6 +26,7 @@ RUN set -xe \
     && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu --with-ldap-sasl \
     && docker-php-ext-install -j$(nproc) gd ldap \
     && pecl install apcu-4.0.11 xdebug-2.4.1 ZendOpcache-7.0.4 \
+    && docker-php-ext-enable apcu xdebug opcache \
     && pecl clear-cache \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $PHP_BUILD_DEPS \
     && rm -rf /usr/include/freetype2
@@ -46,30 +47,32 @@ RUN set -xe \
 
 RUN set -xe \
     && cd /usr/local/etc/php/conf.d \
-    && echo "extension=$(find /usr/local/lib/php/extensions/ -name apcu.so)" > apcu.ini \
-    && echo "apc.enabled=1" >> apcu.ini \
-    && echo "apc.shm_segments=1" >> apcu.ini \
-    && echo "apc.shm_size=128M" >> apcu.ini \
-    && echo "apc.ttl=7200" >> apcu.ini \
-    && echo "apc.enable_cli=0" >> apcu.ini
+    && echo "apc.enabled=1" >> docker-php-ext-apcu.ini \
+    && echo "apc.shm_segments=1" >> docker-php-ext-apcu.ini \
+    && echo "apc.shm_size=128M" >> docker-php-ext-apcu.ini \
+    && echo "apc.ttl=7200" >> docker-php-ext-apcu.ini \
+    && echo "apc.enable_cli=0" >> docker-php-ext-apcu.ini
 
 RUN set -xe \
     && cd /usr/local/etc/php/conf.d \
-    && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name opcache.so)" > opcache.ini \
-    && echo "opcache.enable=1" >> opcache.ini \
-    && echo "opcache.enable_cli=1" >> opcache.ini \
-    && echo "opcache.revalidate_freq=2" >> opcache.ini \
-    && echo "opcache.max_accelerated_files = 20000" >> opcache.ini
+    && echo "opcache.enable=1" >> docker-php-ext-opcache.ini \
+    && echo "opcache.enable_cli=1" >> docker-php-ext-opcache.ini \
+    && echo "opcache.memory_consumption=128" >> docker-php-ext-opcache.ini \
+    && echo "opcache.interned_strings_buffer=8" >> docker-php-ext-opcache.ini \
+    && echo "opcache.fast_shutdown=1" >> docker-php-ext-opcache.ini \
+    && echo "opcache.enable_cli=1" >> docker-php-ext-opcache.ini \
+    && echo "opcache.revalidate_freq=2" >> docker-php-ext-opcache.ini \
+    && echo "opcache.max_accelerated_files = 20000" >> docker-php-ext-opcache.ini
 
 RUN set -xe \
     && cd /usr/local/etc/php/conf.d \
-    && echo ";zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > xdebug.ini \
-    && echo "xdebug.default_enable=1" >> xdebug.ini \
-    && echo "xdebug.profiler_enable=0" >> xdebug.ini \
-    && echo "xdebug.idekey=PHPSTORM" >> xdebug.ini \
-    && echo "xdebug.max_nesting_level=200" >> xdebug.ini \
-    && echo "xdebug.remote_enable=1" >> xdebug.ini \
-    && echo "xdebug.remote_autostart=0" >> xdebug.ini
+    && sed -i -e "s|zend_extension|;zend_extension|" docker-php-ext-xdebug.ini \
+    && echo "xdebug.default_enable=1" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.profiler_enable=0" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.idekey=PHPSTORM" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.max_nesting_level=200" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.remote_enable=1" >> docker-php-ext-xdebug.ini \
+    && echo "xdebug.remote_autostart=0" >> docker-php-ext-xdebug.ini
 
 RUN set -xe \
     && curl -SsL https://gist.githubusercontent.com/yvh/686465fcdfde293a25dba4f338888052/raw/composer-installer.sh | bash -s -- composer \
