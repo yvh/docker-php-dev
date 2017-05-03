@@ -62,3 +62,7 @@ RUN set -xe \
     && echo "xdebug.max_nesting_level=200" >> docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_enable=1" >> docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_autostart=0" >> docker-php-ext-xdebug.ini
+
+RUN set -xe \
+    && curl -SsL https://gist.githubusercontent.com/yvh/686465fcdfde293a25dba4f338888052/raw/composer-installer.sh | bash -s -- composer \
+    && chmod +x /usr/local/bin/composer
