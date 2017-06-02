@@ -25,7 +25,7 @@ RUN set -xe \
     && ln -s /usr/include/freetype2 /usr/include/freetype2/freetype \
     && docker-php-ext-configure gd --enable-gd-native-ttf --with-jpeg-dir=/usr/lib/x86_64-linux-gnu --with-png-dir=/usr/lib/x86_64-linux-gnu --with-freetype-dir=/usr/lib/x86_64-linux-gnu \
     && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu --with-ldap-sasl \
-    && docker-php-ext-install -j$(nproc) gd ldap opcache \
+    && docker-php-ext-install -j$(nproc) exif gd ldap opcache \
     && pecl install apcu-4.0.11 xdebug-2.5.1 \
     && docker-php-ext-enable apcu xdebug \
     && pecl clear-cache \
