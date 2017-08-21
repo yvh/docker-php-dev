@@ -61,8 +61,7 @@ RUN set -xe \
     && echo "opcache.memory_consumption=128" >> docker-php-ext-opcache.ini \
     && echo "opcache.interned_strings_buffer=8" >> docker-php-ext-opcache.ini \
     && echo "opcache.fast_shutdown=1" >> docker-php-ext-opcache.ini \
-    && echo "opcache.enable_cli=1" >> docker-php-ext-opcache.ini \
-    && echo "opcache.revalidate_freq=2" >> docker-php-ext-opcache.ini \
+    && echo "opcache.revalidate_freq=0" >> docker-php-ext-opcache.ini \
     && echo "opcache.max_accelerated_files = 20000" >> docker-php-ext-opcache.ini
 
 RUN set -xe \
