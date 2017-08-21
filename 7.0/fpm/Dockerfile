@@ -1,5 +1,5 @@
 FROM yannickvh/php:7.0-fpm
-MAINTAINER Yannick Vanhaeren
+LABEL maintainer="Yannick Vanhaeren"
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \

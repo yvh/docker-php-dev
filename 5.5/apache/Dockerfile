@@ -1,5 +1,5 @@
 FROM yannickvh/php:5.5-apache
-MAINTAINER Yannick Vanhaeren
+LABEL maintainer="Yannick Vanhaeren"
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
