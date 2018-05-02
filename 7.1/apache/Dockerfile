@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libjpeg62-turbo \
         libpng16-16 \
         git \
-        sudo \
         vim \
         openssh-client \
     && apt-get clean \
