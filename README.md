@@ -4,6 +4,8 @@ See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-dev/)
 
 # Supported tags and respective `Dockerfile` links
 
+- [ `7.3-apache` (*7.3/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/7.3/apache/Dockerfile)
+- [ `7.3-fpm` (*7.3/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/7.3/fpm/Dockerfile)
 - [ `7.2-apache` (*7.2/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/7.2/apache/Dockerfile)
 - [ `7.2-fpm` (*7.2/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/7.2/fpm/Dockerfile)
 - [ `7.1-apache` (*7.1/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/7.1/apache/Dockerfile)
