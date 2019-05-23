@@ -1,6 +1,8 @@
 FROM yannickvh/php:5.3-fpm
 LABEL maintainer="Yannick Vanhaeren"
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # Install dependencies
 RUN set -xe; \
     apt-get update && apt-get install -y --no-install-recommends \

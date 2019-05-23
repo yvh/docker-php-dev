@@ -1,6 +1,8 @@
 FROM yannickvh/php:5.5-apache
 LABEL maintainer="Yannick Vanhaeren"
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # Install dependencies
 RUN set -eux; \
     apt-get update && apt-get install -y --no-install-recommends \
