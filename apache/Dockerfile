@@ -16,7 +16,7 @@ RUN set -xe; \
 RUN set -eux; \
     pecl install -Z apc xdebug-2.2.7; \
     docker-php-ext-enable apc xdebug; \
-    pecl clear-cache;
+    pecl clear-cache
 
 RUN set -eux; \
     docker-php-source extract; \
