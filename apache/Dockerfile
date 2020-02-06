@@ -1,4 +1,4 @@
-FROM yannickvh/php:7.3-fpm
+FROM yannickvh/php:7.0-apache
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -6,9 +6,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 # Install dependencies
 RUN set -eux; \
     apt-get update && apt-get install -y --no-install-recommends \
-        libfreetype6 \
-        libjpeg62-turbo \
-        libpng16-16 \
         git \
         vim \
         openssh-client; \
@@ -17,23 +14,9 @@ RUN set -eux; \
 
 # Add php extensions
 RUN set -eux; \
-    PHP_BUILD_DEPS=" \
-        libfreetype6-dev \
-        libjpeg-dev \
-        libpng-dev \
-        libldap2-dev \
-        libsasl2-dev \
-    "; \
-    apt-get update && apt-get install -y --no-install-recommends $PHP_BUILD_DEPS; \
-    ln -s /usr/include/freetype2 /usr/include/freetype2/freetype; \
-    docker-php-ext-configure gd --enable-gd-native-ttf --with-jpeg-dir=/usr/lib/x86_64-linux-gnu --with-png-dir=/usr/lib/x86_64-linux-gnu --with-freetype-dir=/usr/lib/x86_64-linux-gnu; \
-    docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu --with-ldap-sasl; \
-    docker-php-ext-install -j$(nproc) exif gd ldap opcache; \
     pecl install apcu xdebug; \
     docker-php-ext-enable apcu xdebug; \
-    pecl clear-cache; \
-    apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $PHP_BUILD_DEPS; \
-    rm -rf /usr/include/freetype2
+    pecl clear-cache
 
 RUN set -eux; \
     docker-php-source extract; \
