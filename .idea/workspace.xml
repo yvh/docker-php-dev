@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="174cf04c-5258-4043-a63f-9ecab7e0b4a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/5.3/apache/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.3/cli/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.3/fpm/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.4/apache/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/apache/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.4/cli/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/cli/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.4/fpm/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/fpm/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.5/apache/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.5/cli/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.5/fpm/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.6/apache/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.6/cli/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.6/fpm/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.0/apache/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.0/cli/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.0/fpm/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.1/apache/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.1/cli/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.1/fpm/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.2/apache/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.2/cli/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.2/fpm/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.3/apache/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.3/cli/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.3/fpm/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="a101408e-1460-4f1f-8a05-3c55d4756574" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,94 +14,16 @@
       <executable />
     </execution>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
-  </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="$PROJECT_DIR$/.idea" />
-      </set>
-    </option>
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="local" />
-  <component name="ProjectId" id="1XR57YSV7welvH9eZRjOkZjrhYx" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="174cf04c-5258-4043-a63f-9ecab7e0b4a5" name="Default Changelist" comment="" />
-      <created>1580995899622</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1580995899622</updated>
-      <workItem from="1580995902849" duration="759000" />
-      <workItem from="1580996674143" duration="264000" />
-    </task>
-    <task id="LOCAL-00001" summary="Keep only 5.3">
-      <created>1580996455149</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1580996455149</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add IDE files">
-      <created>1580996503158</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1580996503158</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Keep only 5.3" />
-    <MESSAGE value="Add IDE files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add IDE files" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="845" y="330" width="860" height="814" key="CommitChangelistDialog2" timestamp="1580996948182">
+    <state x="845" y="330" width="860" height="814" key="CommitChangelistDialog2" timestamp="1580997713450">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="845" y="330" width="860" height="814" key="CommitChangelistDialog2/0.27.2560.1413@0.27.2560.1413" timestamp="1580996948182" />
-    <state x="843" y="74" width="1080" height="1213" maximized="true" key="DiffContextDialog" timestamp="1580996367711">
-      <screen x="0" y="27" width="2560" height="1413" />
-    </state>
-    <state x="843" y="74" width="1080" height="1213" maximized="true" key="DiffContextDialog/0.27.2560.1413@0.27.2560.1413" timestamp="1580996367711" />
+    <state x="845" y="330" width="860" height="814" key="CommitChangelistDialog2/0.27.2560.1413@0.27.2560.1413" timestamp="1580997713450" />
   </component>
 </project>
