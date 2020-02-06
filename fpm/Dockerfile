@@ -14,7 +14,7 @@ RUN set -xe; \
 
 # Add php extensions
 RUN set -eux; \
-    pecl install apc xdebug-2.2.7; \
+    pecl install -Z apc xdebug-2.2.7; \
     docker-php-ext-enable apc xdebug; \
     pecl clear-cache;
 
