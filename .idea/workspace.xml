@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a101408e-1460-4f1f-8a05-3c55d4756574" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,16 +14,31 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Update workspace.xml">
+      <created>1580997753696</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580997753696</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update workspace.xml" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="845" y="330" width="860" height="814" key="CommitChangelistDialog2" timestamp="1580997713450">
+    <state x="845" y="330" width="860" height="814" key="CommitChangelistDialog2" timestamp="1580998008988">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="845" y="330" width="860" height="814" key="CommitChangelistDialog2/0.27.2560.1413@0.27.2560.1413" timestamp="1580997713450" />
+    <state x="845" y="330" width="860" height="814" key="CommitChangelistDialog2/0.27.2560.1413@0.27.2560.1413" timestamp="1580998008988" />
   </component>
 </project>
