@@ -14,7 +14,7 @@ RUN set -eux; \
 
 # Add php extensions
 RUN set -eux; \
-    pecl install apcu xdebug; \
+    pecl install apcu xdebug-2.7.2; \
     docker-php-ext-enable apcu xdebug; \
     pecl clear-cache
 
