@@ -1,21 +1,12 @@
-FROM yannickvh/php:7.3-cli
+FROM yannickvh/php-prod:7.3-cli
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Install dependencies
-RUN set -eux; \
-    apt-get update && apt-get install -y --no-install-recommends \
-        git \
-        vim \
-        openssh-client; \
-    apt-get clean; \
-    rm -r /var/lib/apt/lists/*
-
 # Add php extensions
 RUN set -eux; \
-    pecl install apcu xdebug; \
-    docker-php-ext-enable apcu xdebug; \
+    pecl install xdebug; \
+    docker-php-ext-enable xdebug; \
     pecl clear-cache
 
 RUN set -eux; \
@@ -34,21 +25,8 @@ RUN set -eux; \
 
 RUN set -eux; \
     cd /usr/local/etc/php/conf.d; \
-    echo "apc.enabled=1" >> docker-php-ext-apcu.ini; \
-    echo "apc.shm_segments=1" >> docker-php-ext-apcu.ini; \
-    echo "apc.shm_size=128M" >> docker-php-ext-apcu.ini; \
-    echo "apc.ttl=7200" >> docker-php-ext-apcu.ini; \
-    echo "apc.enable_cli=0" >> docker-php-ext-apcu.ini
-
-RUN set -eux; \
-    cd /usr/local/etc/php/conf.d; \
-    echo "opcache.enable=1" >> docker-php-ext-opcache.ini; \
-    echo "opcache.enable_cli=1" >> docker-php-ext-opcache.ini; \
-    echo "opcache.memory_consumption=128" >> docker-php-ext-opcache.ini; \
-    echo "opcache.interned_strings_buffer=8" >> docker-php-ext-opcache.ini; \
-    echo "opcache.fast_shutdown=1" >> docker-php-ext-opcache.ini; \
     echo "opcache.revalidate_freq=0" >> docker-php-ext-opcache.ini; \
-    echo "opcache.max_accelerated_files = 20000" >> docker-php-ext-opcache.ini
+    sed -i -e "s|opcache.validate_timestamps=0|opcache.validate_timestamps=1|" docker-php-ext-opcache.ini
 
 RUN set -eux; \
     cd /usr/local/etc/php/conf.d; \
