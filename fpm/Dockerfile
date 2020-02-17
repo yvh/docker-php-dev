@@ -1,21 +1,12 @@
-FROM yannickvh/php:5.3-fpm
+FROM yannickvh/php-prod:5.3-fpm
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Install dependencies
-RUN set -xe; \
-    apt-get update && apt-get install -y --no-install-recommends \
-        git \
-        vim \
-        openssh-client; \
-    apt-get clean; \
-    rm -r /var/lib/apt/lists/*
-
 # Add php extensions
 RUN set -eux; \
-    pecl install -Z apc xdebug-2.2.7; \
-    docker-php-ext-enable apc xdebug; \
+    pecl install -Z xdebug-2.2.7; \
+    docker-php-ext-enable xdebug; \
     pecl clear-cache
 
 RUN set -eux; \
@@ -31,14 +22,6 @@ RUN set -eux; \
     sed -i -e "s|;realpath_cache_size = 16k|realpath_cache_size = 4096K|" php.ini; \
     sed -i -e "s|;realpath_cache_ttl = 120|realpath_cache_ttl = 600|" php.ini; \
     docker-php-source delete
-
-RUN set -eux; \
-    cd /usr/local/etc/php/conf.d; \
-    echo "apc.enabled=1" >> docker-php-ext-apc.ini; \
-    echo "apc.shm_segments=1" >> docker-php-ext-apc.ini; \
-    echo "apc.shm_size=128M" >> docker-php-ext-apc.ini; \
-    echo "apc.ttl=7200" >> docker-php-ext-apc.ini; \
-    echo "apc.enable_cli=0" >> docker-php-ext-apc.ini
 
 RUN set -eux; \
     cd /usr/local/etc/php/conf.d; \
