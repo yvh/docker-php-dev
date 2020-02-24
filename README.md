@@ -1,6 +1,6 @@
 # Custom build of PHP for development.
 
-See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-dev/)
+See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-dev)
 
 # Supported tags and respective `Dockerfile` links
 
