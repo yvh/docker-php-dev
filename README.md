@@ -4,9 +4,12 @@ See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-dev)
 
 # Supported tags and respective `Dockerfile` links
 
-- [ `7.4-apache` (*7.4/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/apache/Dockerfile)
-- [ `7.4-cli` (*7.4/cli/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/cli/Dockerfile)
-- [ `7.4-fpm` (*7.4/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/fpm/Dockerfile)
+- [ `8.0-apache` (*8.0/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/apache/Dockerfile)
+- [ `8.0-cli` (*8.0/cli/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/cli/Dockerfile)
+- [ `8.0-fpm` (*8.0/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/master/fpm/Dockerfile)
+- [ `7.4-apache` (*7.4/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/7.4/apache/Dockerfile)
+- [ `7.4-cli` (*7.4/cli/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/7.4/cli/Dockerfile)
+- [ `7.4-fpm` (*7.4/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/7.4/fpm/Dockerfile)
 - [ `7.3-apache` (*7.3/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/7.3/apache/Dockerfile)
 - [ `7.3-cli` (*7.3/cli/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/7.3/cli/Dockerfile)
 - [ `7.3-fpm` (*7.3/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/7.3/fpm/Dockerfile)
@@ -32,9 +35,13 @@ See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-dev)
 - [ `5.3-cli` (*5.3/cli/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/5.3/cli/Dockerfile)
 - [ `5.3-fpm` (*5.3/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/5.3/fpm/Dockerfile)
 
+# Base image
+
+[yannickvh/php-prod](https://hub.docker.com/r/yannickvh/php-prod)
+
 # How to use this image
 
-Same use as the [official PHP docker image](https://hub.docker.com/_/php/) but replace `php` image by `yannickvh/php-dev`
+Same use as the [official PHP docker image](https://hub.docker.com/_/php/) and [yannickvh/php-prod](https://hub.docker.com/r/yannickvh/php-prod)
 
 # User Feedback
 
