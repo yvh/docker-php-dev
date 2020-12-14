@@ -1,4 +1,4 @@
-FROM yannickvh/php-prod:7.4-fpm
+FROM yannickvh/php-prod:8.0-fpm
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
