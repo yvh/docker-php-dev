@@ -1,4 +1,4 @@
-FROM yannickvh/php-prod:8.0-cli
+FROM yannickvh/php-prod:8.1-cli
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
