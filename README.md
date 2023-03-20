@@ -4,9 +4,9 @@ See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-dev)
 
 # Supported tags and respective `Dockerfile` links
 
-- [ `8.2-apache` (*8.2/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/main/apache/Dockerfile)
-- [ `8.2-cli` (*8.2/cli/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/main/cli/Dockerfile)
-- [ `8.2-fpm` (*8.2/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/main/fpm/Dockerfile)
+- [ `8.2-apache` (*8.2/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/8.2/apache/Dockerfile)
+- [ `8.2-cli` (*8.2/cli/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/8.2/cli/Dockerfile)
+- [ `8.2-fpm` (*8.2/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/8.2/fpm/Dockerfile)
 - [ `8.1-apache` (*8.1/apache/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/8.1/apache/Dockerfile)
 - [ `8.1-cli` (*8.1/cli/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/8.1/cli/Dockerfile)
 - [ `8.1-fpm` (*8.1/fpm/Dockerfile*)](https://github.com/yvh/docker-php-dev/blob/8.1/fpm/Dockerfile)
