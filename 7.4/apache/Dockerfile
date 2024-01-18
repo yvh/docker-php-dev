@@ -5,7 +5,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Add php extensions
 RUN set -eux; \
-    pecl install xdebug; \
+    pecl install xdebug-3.1.6; \
     docker-php-ext-enable xdebug; \
     pecl clear-cache
 
