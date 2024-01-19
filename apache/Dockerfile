@@ -1,11 +1,16 @@
-FROM yannickvh/php-prod:8.3-cli
+ARG PHP_BASE_IMAGE=
+
+FROM $PHP_BASE_IMAGE
+
+ARG PHP_BASE_IMAGE=
+
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Add php extensions
 RUN set -eux; \
-    pecl install xdebug; \
+    if echo $PHP_BASE_IMAGE | grep -q "7.4"; then pecl install xdebug-3.1.6; else pecl install xdebug; fi; \
     docker-php-ext-enable xdebug; \
     pecl clear-cache
 
