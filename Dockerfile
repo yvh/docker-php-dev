@@ -8,13 +8,12 @@ LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Add php extensions
-RUN set -eux; \
+RUN set -e; \
     if echo $PHP_BASE_IMAGE | grep -q "7.4"; then pecl install xdebug-3.1.6; else pecl install xdebug; fi; \
     docker-php-ext-enable xdebug; \
     pecl clear-cache
 
-RUN set -eux; \
+RUN set -e; \
     docker-php-source extract; \
     cp /usr/src/php/php.ini-development /usr/local/etc/php/php.ini; \
     cd /usr/local/etc/php; \
@@ -28,12 +27,12 @@ RUN set -eux; \
     sed -i -e "s|;realpath_cache_ttl = 120|realpath_cache_ttl = 600|" php.ini; \
     docker-php-source delete
 
-RUN set -eux; \
+RUN set -e; \
     cd /usr/local/etc/php/conf.d; \
     echo "opcache.revalidate_freq=0" >> docker-php-ext-opcache.ini; \
     sed -i -e "s|opcache.validate_timestamps=0|opcache.validate_timestamps=1|" docker-php-ext-opcache.ini
 
-RUN set -eux; \
+RUN set -e; \
     cd /usr/local/etc/php/conf.d; \
     sed -i -e "s|zend_extension|;zend_extension|" docker-php-ext-xdebug.ini; \
     echo "xdebug.default_enable=1" >> docker-php-ext-xdebug.ini; \
