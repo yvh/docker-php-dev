@@ -1,8 +1,8 @@
-ARG PHP_BASE_IMAGE=
+ARG PHP_BASE_IMAGE=scratch
 
 FROM $PHP_BASE_IMAGE
 
-ARG PHP_BASE_IMAGE=
+ARG PHP_BASE_IMAGE
 
 LABEL maintainer="Yannick Vanhaeren"
 
